@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  A convinent tool to download 163 musics.
-// @author       You
+// @author       KelvinQiu
 // @match        https://music.163.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=music.163.com
 // @grant        none
