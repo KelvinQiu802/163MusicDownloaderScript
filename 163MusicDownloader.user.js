@@ -12,7 +12,9 @@
 (function () {
   'use strict';
 
-  window.onhashchange = window.location.reload;
+  window.onhashchange = () => {
+    window.location.reload();
+  };
 
   window.onload = () => {
     // URL Test
@@ -23,7 +25,7 @@
 
   function main() {
     let buttonBox = getButtonBox();
-    addDownloadButton(buttonBox);
+    if (!isVIP(buttonBox)) addDownloadButton(buttonBox);
   }
 
   function getButtonBox() {
@@ -50,5 +52,12 @@
     const ID = curLink.split('id=')[1];
     // Return New Link
     return `http://music.163.com/song/media/outer/url?id=${ID}.mp3`;
+  }
+
+  function isVIP(buttonBox) {
+    let firstButton = buttonBox.querySelectorAll('a')[0];
+    let songType = firstButton.querySelector('i').innerHTML;
+    console.log('VIP Song');
+    return songType.includes('VIP') ? true : false;
   }
 })();
