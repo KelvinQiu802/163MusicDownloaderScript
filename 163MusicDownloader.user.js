@@ -12,6 +12,10 @@
 (function () {
   'use strict';
 
+  window.onhashchange = () => {
+    window.location.reload();
+  };
+
   window.onload = () => {
     // URL Test
     if (window.location.href.split('/#/')[1].startsWith('song')) {
