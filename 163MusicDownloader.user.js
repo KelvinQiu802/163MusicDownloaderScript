@@ -2,7 +2,7 @@
 // @name         163MusicDownloader
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  A convinent tool to download 163 musics 【到达歌曲页面后请手动刷新】
+// @description  A convinent tool to download 163 musics
 // @author       KelvinQiu
 // @match        https://music.163.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=music.163.com
