@@ -2,7 +2,7 @@
 // @name         163MusicDownloader
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  A convinent tool to download 163 musics 【到达歌曲页面后请手动刷新】
+// @description  A convinent tool to download 163 musics
 // @author       KelvinQiu
 // @match        https://music.163.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=music.163.com
@@ -55,9 +55,8 @@
   }
 
   function isVIP(buttonBox) {
-    let firstButton = buttonBox.querySelectorAll('a')[0];
-    let songType = firstButton.querySelector('i').innerHTML;
-    console.log('VIP Song');
+    let firstButton = buttonBox.firstElementChild;
+    let songType = firstButton.firstElementChild.innerHTML;
     return songType.includes('VIP') ? true : false;
   }
 })();
