@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         163MusicDownloader
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      1.0
 // @description  A convinent tool to download 163 musics 【到达歌曲页面后请手动刷新】
 // @author       KelvinQiu
 // @match        https://music.163.com/*
@@ -12,9 +12,7 @@
 (function () {
   'use strict';
 
-  window.onhashchange = () => {
-    window.location.reload();
-  };
+  window.onhashchange = window.location.reload;
 
   window.onload = () => {
     // URL Test
