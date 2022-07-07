@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         163 Music Downloader
+// @name         163MusicDownloader
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  A convinent tool to download 163 musics.
+// @description  A convinent tool to download 163 musics 【到达歌曲页面后请手动刷新】
 // @author       KelvinQiu
 // @match        https://music.163.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=music.163.com
@@ -12,12 +12,16 @@
 (function () {
   'use strict';
 
-  window.onload = main;
+  window.onload = () => {
+    // URL Test
+    if (window.location.href.split('/#/')[1].startsWith('song')) {
+      main();
+    }
+  };
 
   function main() {
     let buttonBox = getButtonBox();
     addDownloadButton(buttonBox);
-    console.log(window.location.href);
   }
 
   function getButtonBox() {
