@@ -12,16 +12,16 @@
 (function () {
   'use strict';
 
-  window.onhashchange = () => {
-    window.location.reload();
-  };
+  window.addEventListener('hashchange', function () {
+    this.location.reload();
+  });
 
-  window.onload = () => {
+  window.addEventListener('load', function () {
     // URL Test
-    if (window.location.href.split('/#/')[1].startsWith('song')) {
+    if (this.location.href.split('/#/')[1].startsWith('song')) {
       main();
     }
-  };
+  });
 
   function main() {
     let buttonBox = getButtonBox();
@@ -43,7 +43,7 @@
     // Set Link
     button.href = getDownloadLink();
     button.target = '_blank';
-    fatherNode.appendChild(button);
+    fatherNode.append(button);
   }
 
   function getDownloadLink() {
@@ -57,6 +57,6 @@
   function isVIP(buttonBox) {
     let firstButton = buttonBox.firstElementChild;
     let songType = firstButton.firstElementChild.innerHTML;
-    return songType.includes('VIP') ? true : false;
+    return songType.includes('VIP');
   }
 })();
